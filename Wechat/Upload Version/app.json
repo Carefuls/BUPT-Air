@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/switchcity/switchcity",
+    "pages/weather/weather",
+    "pages/detail/detail",
+    "pages/map/map",
+    "pages/start/start",
+    "pages/wifi_station/tianqi/tianqi"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4AA1C3",
+    "navigationBarTitleText": "BUPT SICE Team 174",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "position": "top",
+    "backgroundColor": "#4AA1C3",
+    "color": "#FFFFFF",
+    "selectedColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的气象站"
+      },
+      {
+        "pagePath": "pages/weather/weather",
+        "text": "天气"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "周边"
+      },
+      {
+        "pagePath": "pages/switchcity/switchcity",
+        "text": "切换城市"
+      }
+    ]
+  }
+}

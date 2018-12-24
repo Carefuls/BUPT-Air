@@ -1,0 +1,21 @@
+<view class='imageicon'>
+  <image class="icon-image" src="../../images/lollipop.png" bindtap='clickFood'/>
+  <image class="icon-image" src="../../images/purse.png" bindtap='clickShop'/>
+  <image class="icon-image" src="../../images/light.png" bindtap='clickBook'/>
+  <image class="icon-image" src="../../images/pin.png" bindtap='clickPark'/>
+</view>
+<view class='imagetext'>
+  <view>美食</view>
+  <view>购物</view>
+  <view>阅读</view>
+  <view>公园</view>
+</view>
+
+<view class="map_container"> 
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map> 
+</view>
+<view class="place_info"> 
+  <view>{{placeData.title}}</view> 
+  <view>{{placeData.address}}</view> 
+  <view>{{placeData.telephone}}</view> 
+</view> 

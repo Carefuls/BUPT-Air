@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<import src="../movies/movie-list/movie-list-template.wxml" />
+<import src="../movies/movie-grid/movie-grid-template.wxml" />
+<view class='customSwiper'>
+<swiper class='banner' autoplay='true' interval='5000' duration='700' bindchange='switchTab'>
+  <block wx:for="{{sliderList}}">
+    <swiper-item>
+      <image style='width:100%;height:100%;' src="{{item.imageSource}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="tab">
+  <block wx:for="{{sliderList}}">
+    <view wx:if="{{item.selected}}" class='tab-item selected'>{{index+1}}</view>
+    <view wx:else class="tab-item">{{index+1}}</view>
+   </block>
+  </view>
+</view>
+<view class="index">
+    <!--<text>点击地名以更换城市</text>-->
+  <view class="content" bindtap='gotoWeather'>
+    <!--显示当天的天气信息-->
+    <view class="info">
+      <!--城市名称 当前日期-->
+      <view class="city">当前位置 {{location}}{{county}}</view>
+      <!--当天温度-->
+      <view class="temp">{{weatherData.tmp}}℃</view>
+      <!--其他描述-->
+      <view class="weather">
+        <view>{{weatherData.cond_txt}}</view>
+        <view>{{weatherData.wind_dir}} {{weatherData.wind_sc}} 级</view>
+        <view>气压 {{weatherData.pres}} KPa</view>
+        </view>
+        <view class="weather">
+        <view>PM2.5: {{air.pm25}}</view>
+        <view>PM10: {{air.pm10}}</view>
+        <view>AQI：{{air.aqi}}</view>
+        </view>
+        <view class="weather">
+        <view>数据发布时间：{{air.pub_time}}</view>
+        </view>
+    </view>
+  </view>
+    <view class="hotcity-common" style="display:inline;">定位不准？  </view>
+  <view class="thisCityName" bindtap="jump">更改定位</view>
+  <text>\n</text>
+  <view class="hotcity-common" style="display:inline;">查看本地数据 </view>
+  <view class="thisCityName" bindtap="getDataFromOneNet">访问我的气象站</view>
+</view>
